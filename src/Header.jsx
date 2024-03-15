@@ -1,4 +1,3 @@
-import profile from "./assets/img/au1.png";
 const Header = () => {
   return (
     <div className="flex bg-white items-center justify-center">
