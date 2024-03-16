@@ -1,5 +1,6 @@
 import React from "react";
-
+import Coocking from "./coocking";
+import Menus from "./Menus";
 const Recipes = () => {
   return (
     <div className="mt-10">
@@ -10,7 +11,9 @@ const Recipes = () => {
         and culinary inspirations to tantalize your taste buds.
       </p>
       <div className="grid gap-4">
-        <div className="col-start-1 col-end-8 h-4 bg-red-500"></div>
+        <div className="col-start-1 col-end-8 h-4 bg-red-500">
+          <Menus />
+        </div>
         <div className="col-start-8 col-end-13 h-4 bg-black"></div>
       </div>
     </div>

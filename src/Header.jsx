@@ -40,12 +40,15 @@ const Header = () => {
         </div>
         <div className="navbar-end">
           <div className="flex gap-2">
-            <div className="form-control">
+            <div className="form-control relative">
               <input
                 type="text"
                 placeholder="Search"
-                className="input input-bordered w-24 md:w-auto rounded-full"
+                className="input input-bordered w-24 md:w-auto rounded-full px-10"
               />
+              <span class="material-symbols-outlined absolute top-[14px] left-3 opacity-70">
+                search
+              </span>
             </div>
             <div className="dropdown dropdown-end">
               <div

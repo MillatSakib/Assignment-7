@@ -5,7 +5,6 @@ import "./App.css";
 import Header from "./Header";
 import Hero from "./Hero";
 import Recipes from "./Recipes";
-import Menus from "./Menus";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,7 +15,6 @@ function App() {
         <Header />
         <Hero />
         <Recipes />
-        <Menus />
       </div>
     </>
   );
