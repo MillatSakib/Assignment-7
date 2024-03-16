@@ -1,6 +1,7 @@
 import React from "react";
-import Coocking from "./coocking";
-import Menus from "./Menus";
+import FoodData from "./Menus.jsx";
+import Coocking from "./Coocking";
+
 const Recipes = () => {
   return (
     <div className="mt-10">
@@ -10,11 +11,13 @@ const Recipes = () => {
         desserts and seasonal specialties, our collection offers diverse flavors
         and culinary inspirations to tantalize your taste buds.
       </p>
-      <div className="grid gap-4">
-        <div className="col-start-1 col-end-8 h-4 bg-red-500">
-          <Menus />
+      <div className="flex">
+        <div className="w-[70%]">
+          <FoodData></FoodData>
         </div>
-        <div className="col-start-8 col-end-13 h-4 bg-black"></div>
+        <div className="w-[30%]">
+          <Coocking />
+        </div>
       </div>
     </div>
   );
