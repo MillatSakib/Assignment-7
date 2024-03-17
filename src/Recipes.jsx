@@ -11,11 +11,11 @@ const Recipes = () => {
         desserts and seasonal specialties, our collection offers diverse flavors
         and culinary inspirations to tantalize your taste buds.
       </p>
-      <div className="flex">
-        <div className="w-[70%]">
+      <div className="flex flex-col lg:flex-row gap-4">
+        <div className="lg:w-[65%] w-full">
           <FoodData></FoodData>
         </div>
-        <div className="w-[30%]">
+        <div className="lg:w-[35%] w-full">
           <Coocking />
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 const FoodData = () => {
   const [foodData, setFoodData] = useState([]);
 
@@ -10,7 +9,7 @@ const FoodData = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-1  md:grid-cols-2 items-center justify-center gap-4">
       {foodData.map((fData) => (
         <FoodCard fData={fData} key={fData.id}></FoodCard>
       ))}
@@ -18,14 +17,18 @@ const FoodData = () => {
   );
 };
 
-function FoodCard({ fData }) {
+function FoodCard({ fData, handleAddToCooking }) {
   console.log(fData);
 
   return (
-    <div>
-      <div className="card card-compact w-96 bg-base-100 shadow-xl">
+    <div className="mx-auto">
+      <div className="card card-compact max-w-96 bg-base-100 shadow-xl">
         <figure>
-          <img src={fData?.recipeImage} alt="foods Img" />
+          <img
+            src={fData?.recipeImage}
+            alt="foods Img"
+            className="max-h-[185px] w-full"
+          />
         </figure>
         <div className="card-body">
           <h2 className="card-title font-bold text-xl">{fData?.recipeName}</h2>
@@ -56,7 +59,10 @@ function FoodCard({ fData }) {
             </span>
           </div>
           <div className="card-actions justify-start text-left">
-            <button className="btn btn-success rounded-full px-5 font-bold">
+            <button
+              className="btn btn-success rounded-full px-5 font-bold"
+              onClick={(e) => handleAddToCooking(fData)}
+            >
               Want to Cook
             </button>
           </div>
