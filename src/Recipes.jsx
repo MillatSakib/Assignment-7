@@ -35,7 +35,7 @@ const Recipes = () => {
           <FoodData handleAddToCooking={handleAddToCooking}></FoodData>
         </div>
         <div className="lg:w-[35%] w-full">
-          <Coocking items={items} />
+          <Coocking items={items} setItems={setItems} />
         </div>
       </div>
     </div>

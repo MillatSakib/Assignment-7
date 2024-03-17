@@ -1,9 +1,16 @@
 import React from "react";
 import { useState } from "react";
-const Coocking = ({ items }) => {
+
+const removeDataById = (jsonData, idToRemove) => {
+  return jsonData.filter((item) => item.recipeId !== idToRemove);
+};
+
+const Coocking = ({ items, setItems }) => {
   const [stateVariable, setStateFunction] = useState([]);
-  const DataSet = (abc) => {
-    console.log(abc);
+  const DataSet = (abc, id) => {
+    // console.log(abc);
+    const filteredData = removeDataById(items, id);
+    setItems(filteredData);
     setStateFunction([...stateVariable, abc]);
   };
   return (
@@ -36,7 +43,7 @@ const Coocking = ({ items }) => {
                 <td>
                   <button
                     className="btn btn-success rounded-full font-bold"
-                    onClick={() => DataSet(fData)}
+                    onClick={() => DataSet(fData, fData.recipeId)}
                   >
                     Preparing
                   </button>
