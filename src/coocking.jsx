@@ -1,6 +1,11 @@
 import React from "react";
-
+import { useState } from "react";
 const Coocking = ({ items }) => {
+  const [stateVariable, setStateFunction] = useState([]);
+  const DataSet = (abc) => {
+    console.log(abc);
+    setStateFunction([...stateVariable, abc]);
+  };
   return (
     <div className="border-2 rounded-xl py-6">
       <h2 className="text-xl md:text-2xl font-bold my-4">
@@ -29,7 +34,10 @@ const Coocking = ({ items }) => {
                 </td>
                 <td className="opacity-80 font-medium">{fData.calories}</td>
                 <td>
-                  <button className="btn btn-success rounded-full font-bold">
+                  <button
+                    className="btn btn-success rounded-full font-bold"
+                    onClick={() => DataSet(fData)}
+                  >
                     Preparing
                   </button>
                 </td>
@@ -56,12 +64,16 @@ const Coocking = ({ items }) => {
           </thead>
           <tbody>
             {/* row 1 */}
-            <tr className="opacity-80 font-medium">
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
+            {stateVariable.map((fData, index) => (
+              <tr key={fData.recipeId}>
+                <th className="opacity-80 font-medium">{index + 1}</th>
+                <td className="opacity-80 font-medium">{fData.recipeName}</td>
+                <td className="opacity-80 font-medium">
+                  {fData.preparingTime}
+                </td>
+                <td className="opacity-80 font-medium">{fData.calories}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
