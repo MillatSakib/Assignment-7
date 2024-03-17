@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./Header";
 import Hero from "./Hero";
 import Recipes from "./Recipes";
+import toast, { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Header />
         <Hero />
         <Recipes />
+        <Toaster></Toaster>
       </div>
     </>
   );

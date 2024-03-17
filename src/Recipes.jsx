@@ -1,4 +1,5 @@
 import React from "react";
+import toast, { Toaster } from "react-hot-toast";
 import FoodData from "./Menus.jsx";
 import { useState } from "react";
 import Coocking from "./Coocking.jsx";
@@ -12,7 +13,7 @@ const Recipes = () => {
       (existingItem) => existingItem.recipeId === item.recipeId
     );
     if (existingItemIndex !== -1) {
-      alert("Akam Hogeya!!");
+      toast("Here is your toast.");
     } else {
       const updatedItems = [...items, newItem];
 
