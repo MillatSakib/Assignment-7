@@ -13,7 +13,9 @@ const Recipes = () => {
       (existingItem) => existingItem.recipeId === item.recipeId
     );
     if (existingItemIndex !== -1) {
-      toast("Here is your toast.");
+      toast.error("Error Notification !", {
+        position: "top-right",
+      });
     } else {
       const updatedItems = [...items, newItem];
 
