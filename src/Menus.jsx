@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-const FoodData = () => {
+const FoodData = ({ handleAddToCooking }) => {
   const [foodData, setFoodData] = useState([]);
 
   useEffect(() => {
@@ -11,14 +11,18 @@ const FoodData = () => {
   return (
     <div className="grid grid-cols-1  md:grid-cols-2 items-center justify-center gap-4">
       {foodData.map((fData) => (
-        <FoodCard fData={fData} key={fData.id}></FoodCard>
+        <FoodCard
+          fData={fData}
+          key={fData.id}
+          handleAddToCooking={handleAddToCooking}
+        ></FoodCard>
       ))}
     </div>
   );
 };
 
 function FoodCard({ fData, handleAddToCooking }) {
-  console.log(fData);
+  // console.log(fData);
 
   return (
     <div className="mx-auto">
@@ -61,7 +65,7 @@ function FoodCard({ fData, handleAddToCooking }) {
           <div className="card-actions justify-start text-left">
             <button
               className="btn btn-success rounded-full px-5 font-bold"
-              onClick={(e) => handleAddToCooking(fData)}
+              onClick={() => handleAddToCooking(fData)}
             >
               Want to Cook
             </button>

@@ -1,9 +1,11 @@
 import React from "react";
 
-const Coocking = () => {
+const Coocking = ({ items }) => {
   return (
     <div className="border-2 rounded-xl py-6">
-      <h2 className="text-xl md:text-2xl font-bold my-4">Want to cook: 01</h2>
+      <h2 className="text-xl md:text-2xl font-bold my-4">
+        Want to cook: {items?.length}
+      </h2>
       <hr className="mx-[10%]" />
       <div className="overflow-x-auto">
         <table className="table">
@@ -18,17 +20,21 @@ const Coocking = () => {
           </thead>
           <tbody>
             {/* row 1 */}
-            <tr>
-              <th className="opacity-80 font-medium">1</th>
-              <td className="opacity-80 font-medium">Chicken Caesar Salad</td>
-              <td className="opacity-80 font-medium">20 minutes</td>
-              <td className="opacity-80 font-medium">400 calories</td>
-              <td>
-                <button className="btn btn-success rounded-full font-bold">
-                  Preparing
-                </button>
-              </td>
-            </tr>
+            {items.map((fData, index) => (
+              <tr>
+                <th className="opacity-80 font-medium">{index + 1}</th>
+                <td className="opacity-80 font-medium">{fData.recipeName}</td>
+                <td className="opacity-80 font-medium">
+                  {fData.preparingTime}
+                </td>
+                <td className="opacity-80 font-medium">{fData.calories}</td>
+                <td>
+                  <button className="btn btn-success rounded-full font-bold">
+                    Preparing
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

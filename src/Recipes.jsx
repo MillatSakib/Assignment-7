@@ -1,8 +1,19 @@
 import React from "react";
 import FoodData from "./Menus.jsx";
-import Coocking from "./Coocking";
+import { useState } from "react";
+import Coocking from "./Coocking.jsx";
 
 const Recipes = () => {
+  const [items, setItems] = useState([]);
+  function handleAddToCooking(item) {
+    // console.log(item.recipeId);
+    const newItem = item;
+    // console.log(items.find((ite) => ite.recipeId === item.recipeId));
+    const updatedItems = [...items, newItem];
+
+    setItems(updatedItems);
+    console.log(items);
+  }
   return (
     <div className="mt-10">
       <h2 className="text-3xl md:text-4xl font-bold">Our Recipes</h2>
@@ -13,10 +24,10 @@ const Recipes = () => {
       </p>
       <div className="flex flex-col lg:flex-row gap-4">
         <div className="lg:w-[65%] w-full">
-          <FoodData></FoodData>
+          <FoodData handleAddToCooking={handleAddToCooking}></FoodData>
         </div>
         <div className="lg:w-[35%] w-full">
-          <Coocking />
+          <Coocking items={items} />
         </div>
       </div>
     </div>
