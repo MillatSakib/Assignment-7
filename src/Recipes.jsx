@@ -13,7 +13,7 @@ const Recipes = () => {
       (existingItem) => existingItem.recipeId === item.recipeId
     );
     if (existingItemIndex !== -1) {
-      toast.error("Error Notification !", {
+      toast.error("Already Exist!", {
         position: "top-right",
       });
     } else {

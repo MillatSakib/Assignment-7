@@ -55,7 +55,7 @@ const Coocking = ({ items, setItems }) => {
       </div>
 
       <h3 className="text-xl md:text-2xl font-bold my-4">
-        Currently coocking : 02
+        Currently coocking : {stateVariable.length}
       </h3>
       <hr className="mx-[10%]" />
       <div className="overflow-x-auto">
