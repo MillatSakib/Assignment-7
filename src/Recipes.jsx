@@ -8,11 +8,18 @@ const Recipes = () => {
   function handleAddToCooking(item) {
     // console.log(item.recipeId);
     const newItem = item;
-    // console.log(items.find((ite) => ite.recipeId === item.recipeId));
-    const updatedItems = [...items, newItem];
+    const existingItemIndex = items.findIndex(
+      (existingItem) => existingItem.recipeId === item.recipeId
+    );
+    if (existingItemIndex !== -1) {
+      alert("Akam Hogeya!!");
+    } else {
+      const updatedItems = [...items, newItem];
 
-    setItems(updatedItems);
-    console.log(items);
+      setItems(updatedItems);
+      console.log(items);
+    }
+    // console.log(items.find((ite) => ite.recipeId === item.recipeId));
   }
   return (
     <div className="mt-10">

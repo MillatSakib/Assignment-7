@@ -21,7 +21,7 @@ const Coocking = ({ items }) => {
           <tbody>
             {/* row 1 */}
             {items.map((fData, index) => (
-              <tr>
+              <tr key={fData.recipeId}>
                 <th className="opacity-80 font-medium">{index + 1}</th>
                 <td className="opacity-80 font-medium">{fData.recipeName}</td>
                 <td className="opacity-80 font-medium">
